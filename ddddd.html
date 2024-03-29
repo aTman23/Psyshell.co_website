@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Modal Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="myForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="profession" class="form-label">Profession</label>
+            <input type="text" class="form-control" id="profession" name="profession">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="mobile_number" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control" id="mobile_number" name="mobile_number">
+          </div>
+          <div class="mb-3">
+            <label for="hobby" class="form-label">How you heard about us</label>
+            <input type="text" class="form-control" id="hobby" name="heard_about_us">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button  class="btn btn-primary" onclick="submitForm(event)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript to trigger modal on page load -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+    myModal.show();
+  });
+  function submitForm(event) {
+    event.preventDefault()
+    let data = new FormData(document.getElementById("myForm"));
+    console.log("Form submitted:");
+    fetch("https://script.google.com/macros/s/AKfycbzWJOgCta0r2hFizYci-dDf5YAk2N22FcHPviMOy7rrhtJES5bnLSTgz7GI9s0SpWqUCA/exec", {
+                method: "POST",
+                body: data
+            })
+            .then(res => res.text())
+            .then(data => {
+                console.log(data);
+                alert("Got the data")
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+  }
+</script>
+
+</body>
+</html>
