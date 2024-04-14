@@ -52,28 +52,28 @@
           <div class="offcanvas-body">
             <ul id="bsb-tpl-navbar" class="navbar-nav justify-content-end flex-grow-1">
               <li class="nav-item">
-                <a class="nav-link active" href="#scrollspyNav" aria-current="page" data-bs-dismiss="offcanvas"
-                  data-bs-target="#offcanvasNavbar">Home</a>
+                <a class="nav-link active" href="#scrollspyHero" aria-current="page" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar">Home</a>
+
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#scrollspyServices" data-bs-dismiss="offcanvas"
-                  data-bs-target="#offcanvasNavbar">Services</a>
+                  data-bs-target="#offcanvasNavbar" aria-current="page">Services</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#scrollspyPortfolio" data-bs-dismiss="offcanvas"
-                  data-bs-target="#offcanvasNavbar">Activities</a>
+                  data-bs-target="#offcanvasNavbar" aria-current="page">Activities</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#scrollspyAbout" data-bs-dismiss="offcanvas"
-                  data-bs-target="#offcanvasNavbar">About</a>
+                  data-bs-target="#offcanvasNavbar" aria-current="page">About</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#scrollspyTeam" data-bs-dismiss="offcanvas"
-                  data-bs-target="#offcanvasNavbar">Team</a>
+                  data-bs-target="#offcanvasNavbar" aria-current="page">Team</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#scrollspyContact" data-bs-dismiss="offcanvas"
-                  data-bs-target="#offcanvasNavbar">Contact</a>
+                  data-bs-target="#offcanvasNavbar" aria-current="page">Contact</a>
               </li>
             </ul>
           </div>
@@ -744,7 +744,17 @@
 
   <!-- BSB Body End -->
   <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
 
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+  });
     document.addEventListener('DOMContentLoaded', function() {
       var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
       myModal.show();
@@ -766,6 +776,7 @@
                   console.error('Error:', error);
               });
     }
+
   </script>
   
 </body>
