@@ -603,7 +603,7 @@
               &copy; 2024. All Rights Reserved.
             </div>
             <div class="credits text-secondary text-center text-md-start mt-2 fs-7">
-              <a href="http://psyshell.co/" class="link-secondary text-decoration-none">Psyshell.co</a>
+              <a href="https://psyshell.co/" class="link-secondary text-decoration-none">Psyshell.co</a>
               with <span class="text-primary">&#9829;</span>
             </div>
           </div>
@@ -651,25 +651,25 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Psyshell</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form id="myForm">
           <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label" id="name">Name</label>
             <input type="text" class="form-control" id="name" name="name">
           </div>
           <div class="mb-3">
-            <label for="profession" class="form-label">Profession</label>
+            <label for="profession" class="form-label" id="profession">Profession</label>
             <input type="text" class="form-control" id="profession" name="profession">
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label" id="email">Email</label>
             <input type="email" class="form-control" id="email" name="email">
           </div>
           <div class="mb-3">
-            <label for="mobile_number" class="form-label">Mobile Number</label>
+            <label for="mobile_number" class="form-label" id="mobilenumber">Mobile Number</label>
             <input type="tel" class="form-control" id="mobile_number" name="mobile_number">
           </div>
           <div class="mb-3">
@@ -680,7 +680,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button  class="btn btn-primary" onclick="submitForm(event)">Save changes</button>
+        <button  class="btn btn-primary" onclick="submitForm(event)">Submit</button>
       </div>
     </div>
   </div>
@@ -716,6 +716,7 @@
     });
     function submitForm(event) {
       event.preventDefault()
+      let form = document.getElementById("myForm");
       let data = new FormData(document.getElementById("myForm"));
       console.log("Form submitted:");
       fetch("https://script.google.com/macros/s/AKfycbzmz7RJSUwIUbFLtlsh6bbxoQW5Rz22auch0xdBHeX_HnkNXhuJQpHLACM0jJVuHJOG/exec", {
@@ -726,6 +727,7 @@
               .then(data => {
                   console.log(data);
                   alert("Thank you for your response");
+                  form.reset();
               })
               .catch(error => {
                   console.error('Error:', error);
