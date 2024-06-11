@@ -183,7 +183,7 @@ function previewContent() {
     previewBanner.src = bannerSrc;
     previewBanner.hidden = false;
   }
-document.querySelector("div.preview-container").style.display = "block";
+  document.querySelector("div.preview-container").style.display = "block";
   document.getElementById("preview-content").innerHTML = content;
 }
 
@@ -220,78 +220,63 @@ window.addEventListener("load", initializeEditor);
 var uid = localStorage.getItem("uid");
 var puid = localStorage.getItem("puid");
 
+function getUserData() {
+  const closeDialogButton = document.getElementById("closeDialog");
 
+  closeDialogButton.addEventListener("click", () => {
+    dialog.style.display = "none";
+  });
 
-function getUserData(){
-    const closeDialogButton = document.getElementById("closeDialog");
-
-    closeDialogButton.addEventListener("click", () => {
+  // Close the dialog when clicking outside the form
+  window.addEventListener("click", (event) => {
+    if (event.target == dialog) {
       dialog.style.display = "none";
-    });
-  
-    // Close the dialog when clicking outside the form
-    window.addEventListener("click", (event) => {
-      if (event.target == dialog) {
-        dialog.style.display = "none";
-      }
-    });
-  
-   
-    var userDetails;
-    // Handle form submission
-    document
-      .getElementById("userDetailsForm")
-      .addEventListener("submit", async (e) => {
-        e.preventDefault();
-  
-        const email = document.getElementById("email").value;
-        const nickname = document.getElementById("authorName").value;
-        const linkedin = document.getElementById("linkedin").value;
-        const phoneNumber = document.getElementById("phoneNumber").value;
-  
-        if (!email || !authorName || !linkedin || !phoneNumber) {
-          alert("plese enter you details");
-          return false;
-        }
-  
-        userDetails = {
-          email,
-          nickname,
-          linkedin,
-          phoneNumber,
-        };
+    }
+  });
 
+  var userDetails;
+  // Handle form submission
+  document
+    .getElementById("userDetailsForm")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-        if (!userDetails) {
-            closeDialogButton.click()
-            return false;
-          
-          }
-      
-          postBlog(userDetails)
-      });
-  
-  
-}
+      const email = document.getElementById("email").value;
+      const nickname = document.getElementById("authorName").value;
+      const linkedin = document.getElementById("linkedin").value;
+      const phoneNumber = document.getElementById("phoneNumber").value;
 
-function postingBlog(){
-
-    if (!uid && !puid) {
-        document.getElementById("userDetailsDialog").style.display = "block";
-         getUserData();
-      }else{
-
-
-        postBlog();
+      if (!email || !authorName || !linkedin || !phoneNumber) {
+        alert("plese enter you details");
+        return false;
       }
 
+      userDetails = {
+        email,
+        nickname,
+        linkedin,
+        phoneNumber,
+      };
+
+      if (!userDetails) {
+        closeDialogButton.click();
+        return false;
+      }
+
+      postBlog(userDetails);
+    });
 }
 
-
-
+function postingBlog() {
+  if (!uid && !puid) {
+    document.getElementById("userDetailsDialog").style.display = "block";
+    getUserData();
+  } else {
+    postBlog();
+  }
+}
 
 async function postBlog(userDetails) {
-
   let content = document.getElementById("editor").innerHTML;
   let editor = document.getElementById("editor");
   let images = editor.querySelectorAll("img");
@@ -336,8 +321,8 @@ async function postBlog(userDetails) {
     console.log(postData);
     if (postData.message === "Blog post created successfully") {
       localStorage.removeItem("autosave");
-
       localStorage.removeItem("content");
+      localStorage.clear();
       alert("your post sent to admin approval");
       window.location.reload();
     }
@@ -361,7 +346,9 @@ async function uploadImageToStorage(base64Image) {
   return data.imageUrl;
 }
 
-document.getElementById("postblog").addEventListener("click", () => postingBlog());
+document
+  .getElementById("postblog")
+  .addEventListener("click", () => postingBlog());
 
 function getBase64FromFile(file) {
   return new Promise((resolve, reject) => {

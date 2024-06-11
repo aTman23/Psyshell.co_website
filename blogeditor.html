@@ -3,73 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Advanced Blog Writer | PsyShell</title>
-    <link rel="shortcut icon" href="assets/img/ATMAN-removebg-preview.png" type="image/x-icon">
-  
+    <title>Advanced Blog Writer | PsyShell</title>
+    <link
+      rel="shortcut icon"
+      href="assets/img/ATMAN-removebg-preview.png"
+      type="image/x-icon"
+    />
+
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/wave-bsb.css">
+    <link rel="stylesheet" href="./assets/css/wave-bsb.css" />
 
     <link rel="stylesheet" href="./assets/css/blogeditor.css" />
   </head>
   <body>
-
-
-
-
-    <header id="header" class="sticky-top bsb-tpl-header-sticky bsb-tpl-header-sticky-animationX">
-      <nav id="scrollspyNav"
+    <header
+      id="header"
+      class="sticky-top bsb-tpl-header-sticky bsb-tpl-header-sticky-animationX"
+    >
+      <nav
+        id="scrollspyNav"
         class="navbar navbar-expand-lg bsb-tpl-bg-blue bsb-navbar bsb-navbar-hover bsb-navbar-caret bsb-tpl-navbar-sticky"
-        data-bsb-sticky-target="#header">
+        data-bsb-sticky-target="#header"
+      >
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="./assets/img/ATMAN-removebg-preview.png" class="bsb-tpl-logo" alt="">
+            <img
+              src="./assets/img/ATMAN-removebg-preview.png"
+              class="bsb-tpl-logo"
+              alt=""
+            />
           </a>
 
           <!-- <h5> Psyshell - Advanced Blog Editor</h5> -->
-          <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list"
-              viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-list"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
             </svg>
           </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="offcanvas-body">
-              <ul id="bsb-tpl-navbar" class="navbar-nav justify-content-end flex-grow-1">
+              <ul
+                id="bsb-tpl-navbar"
+                class="navbar-nav justify-content-end flex-grow-1"
+              >
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html#scrollspyHero" aria-current="page" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar"style="color:black;">Home</a>
-  
+                  <a
+                    class="nav-link active"
+                    href="index.html#scrollspyHero"
+                    aria-current="page"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    style="color: black"
+                    >Home</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html#scrollspyServices" data-bs-dismiss="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-current="page" style="color:black;">Services</a>
+                  <a
+                    class="nav-link active"
+                    href="index.html#scrollspyServices"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-current="page"
+                    style="color: black"
+                    >Services</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html#scrollspyPortfolio" data-bs-dismiss="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-current="page"style="color:black;">Activities</a>
+                  <a
+                    class="nav-link active"
+                    href="index.html#scrollspyPortfolio"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-current="page"
+                    style="color: black"
+                    >Activities</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html#scrollspyAbout" data-bs-dismiss="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-current="page"style="color:black;">About</a>
+                  <a
+                    class="nav-link active"
+                    href="index.html#scrollspyAbout"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-current="page"
+                    style="color: black"
+                    >About</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html#scrollspyTeam" data-bs-dismiss="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-current="page"style="color:black;">Team</a>
+                  <a
+                    class="nav-link active"
+                    href="index.html#scrollspyTeam"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-current="page"
+                    style="color: black"
+                    >Team</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html#scrollspyContact" data-bs-dismiss="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-current="page"style="color:black;">Contact</a>
+                  <a
+                    class="nav-link active"
+                    href="index.html#scrollspyContact"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-current="page"
+                    style="color: black"
+                    >Contact</a
+                  >
                 </li>
-               
-  
               </ul>
             </div>
           </div>
@@ -80,390 +155,403 @@
     <div class="container mt-3">
       <div class="editor-container">
         <div class="fixed-nav">
-        <ul class="nav nav-tabs" id="editorTab" role="tablist">
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              id="format-tab"
-              data-toggle="tab"
-              href="#format"
-              role="tab"
-              aria-controls="format"
-              aria-selected="true"
-              >Format</a
+          <ul class="nav nav-tabs" id="editorTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="format-tab"
+                data-toggle="tab"
+                href="#format"
+                role="tab"
+                aria-controls="format"
+                aria-selected="true"
+                >Format</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="insert-tab"
+                data-toggle="tab"
+                href="#insert"
+                role="tab"
+                aria-controls="insert"
+                aria-selected="false"
+                >Insert</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="style-tab"
+                data-toggle="tab"
+                href="#style"
+                role="tab"
+                aria-controls="style"
+                aria-selected="false"
+                >Style</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="shortcuts-tab"
+                data-toggle="tab"
+                href="#shortcuts"
+                role="tab"
+                aria-controls="shortcuts"
+                aria-selected="false"
+                >Shortcuts</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="settings-tab"
+                data-toggle="tab"
+                href="#settings"
+                role="tab"
+                aria-controls="settings"
+                aria-selected="false"
+                >Settings</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="editorTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="format"
+              role="tabpanel"
+              aria-labelledby="format-tab"
             >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="insert-tab"
-              data-toggle="tab"
-              href="#insert"
-              role="tab"
-              aria-controls="insert"
-              aria-selected="false"
-              >Insert</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="style-tab"
-              data-toggle="tab"
-              href="#style"
-              role="tab"
-              aria-controls="style"
-              aria-selected="false"
-              >Style</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="shortcuts-tab"
-              data-toggle="tab"
-              href="#shortcuts"
-              role="tab"
-              aria-controls="shortcuts"
-              aria-selected="false"
-              >Shortcuts</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="settings-tab"
-              data-toggle="tab"
-              href="#settings"
-              role="tab"
-              aria-controls="settings"
-              aria-selected="false"
-              >Settings</a
-            >
-          </li>
-        </ul>
-        <div class="tab-content" id="editorTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="format"
-            role="tabpanel"
-            aria-labelledby="format-tab"
-          >
-            <div class="btn-toolbar mt-3" role="toolbar">
-              <div class="btn-group mr-2 mb-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Bold (Ctrl+B)"
-                  onclick="execCmd('bold')"
-                >
-                  <b>Bold</b>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Italic (Ctrl+I)"
-                  onclick="execCmd('italic')"
-                >
-                  <i>Italic</i>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Underline (Ctrl+U)"
-                  onclick="execCmd('underline')"
-                >
-                  <u>Underline</u>
-                </button>
-                <button title="Horizontal Rule"  class="btn btn-secondary" onclick=" execCmdWithArg('insertHTML','<div><hr></div>')">Horizontal Rule</button>
+              <div class="btn-toolbar mt-3" role="toolbar">
+                <div class="btn-group mr-2 mb-2" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Bold (Ctrl+B)"
+                    onclick="execCmd('bold')"
+                  >
+                    <b>Bold</b>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Italic (Ctrl+I)"
+                    onclick="execCmd('italic')"
+                  >
+                    <i>Italic</i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Underline (Ctrl+U)"
+                    onclick="execCmd('underline')"
+                  >
+                    <u>Underline</u>
+                  </button>
+                  <button
+                    title="Horizontal Rule"
+                    class="btn btn-secondary"
+                    onclick=" execCmdWithArg('insertHTML','<div><hr></div>')"
+                  >
+                    Horizontal Rule
+                  </button>
 
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="StrikeThrough (Ctrl+Shift+X)"
-                  onclick="execCmd('strikeThrough')"
-                >
-                  <s>Strike</s>
-                </button>
-                <button title="Blockquote"  class="btn btn-secondary" onclick=" execCmdWithArg('formatBlock', '<div><blockquote style=\'margin-left: 0; border-left: 2px solid #ccc; padding-left: 10px;\'></div>')">Blockquote</button>
-
-              </div>
-              <div class="btn-group mr-2  mb-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Left Align (Ctrl+L)"
-                  onclick="execCmd('justifyLeft')"
-                >
-                  Left Align
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Center Align (Ctrl+E)"
-                  onclick="execCmd('justifyCenter')"
-                >
-                  Center Align
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Right Align (Ctrl+R)"
-                  onclick="execCmd('justifyRight')"
-                >
-                  Right Align
-                </button>
-              </div>
-              <div class="btn-group mr-2  mb-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Ordered List (Ctrl+Shift+7)"
-                  onclick="execCmd('insertOrderedList')"
-                >
-                  Ordered List
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="Unordered List (Ctrl+Shift+8)"
-                  onclick="execCmd('insertUnorderedList')"
-                >
-                  Unordered List
-                </button>
-              </div>
-              <div class="btn-group mr-2  mb-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="H1 (Ctrl+1)"
-                  onclick="execCmdWithArg('formatBlock', 'H1')"
-                >
-                  H1
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="H2 (Ctrl+2)"
-                  onclick="execCmdWithArg('formatBlock', 'H2')"
-                >
-                  H2
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  title="H3 (Ctrl+3)"
-                  onclick="execCmdWithArg('formatBlock', 'H3')"
-                >
-                  H3
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="insert"
-            role="tabpanel"
-            aria-labelledby="insert-tab"
-          >
-            <div class="btn-toolbar mt-3" role="toolbar">
-              <div class="btn-group mr-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="document.getElementById('imageInput').click()"
-                  title="Insert Image"
-                >
-                  Insert Image
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="insertLink()"
-                  title="Insert Link"
-                >
-                  Insert Link
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="style"
-            role="tabpanel"
-            aria-labelledby="style-tab"
-          >
-            <div class="btn-toolbar mt-3" role="toolbar">
-              <div class="btn-group mr-2" role="group">
-                <select
-                  class="custom-select"
-                  title="Font Size"
-                  onchange="execCmdWithArg('fontSize', this.value)"
-                >
-                  <option value="1">Small</option>
-                  <option value="2">Normal</option>
-                  <option value="3">Medium</option>
-                  <option value="4">Large</option>
-                  <option value="5">Extra Large</option>
-                  <option value="6">Huge</option>
-                  <option value="7">Giant</option>
-                </select>
-              </div>
-              <div class="btn-group mr-2" role="group">
-                <label for="textColor" class="mr-2">Font</label>
-                <input
-                  type="color"
-                  id="textColor"
-                  class="form-control-color"
-                  title="Text Color"
-                  onchange="execCmdWithArg('foreColor', this.value)"
-                />
-                <label for="highlightColor" class="ml-3 mr-2">Highlight</label>
-                <input
-                  type="color"
-                  id="highlightColor"
-                  class="form-control-color"
-                  title="Background Color"
-                  onchange="execCmdWithArg('hiliteColor', this.value)"
-                />
-              </div>
-              <div class="btn-group mr-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="execCmd('removeFormat')"
-                  title="Remove Format"
-                >
-                  Remove Format
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="execCmd('undo')"
-                  title="Undo"
-                >
-                  Undo
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="execCmd('redo')"
-                  title="Redo"
-                >
-                  Redo
-                </button>
-              </div>
-              <div class="btn-group mr-2" role="group">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="toggleCase('upper')"
-                  title="Uppercase"
-                >
-                  Uppercase
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  onclick="toggleCase('lower')"
-                  title="Lowercase"
-                >
-                  Lowercase
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="shortcuts"
-            role="tabpanel"
-            aria-labelledby="shortcuts-tab"
-          >
-            <div class="mt-3 p-3 border rounded bg-light">
-              <h3>Keyboard Shortcuts</h3>
-              <div class="row">
-                <div class="col-md-6">
-                  <ul class="list-unstyled">
-                    <li><kbd>Ctrl</kbd> + <kbd>B</kbd> : Bold</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>I</kbd> : Italic</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>U</kbd> : Underline</li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> :
-                      StrikeThrough
-                    </li>
-                    <li><kbd>Ctrl</kbd> + <kbd>L</kbd> : Left Align</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>E</kbd> : Center Align</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>R</kbd> : Right Align</li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>7</kbd> :
-                      Ordered List
-                    </li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>8</kbd> :
-                      Unordered List
-                    </li>
-                  </ul>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="StrikeThrough (Ctrl+Shift+X)"
+                    onclick="execCmd('strikeThrough')"
+                  >
+                    <s>Strike</s>
+                  </button>
+                  <button
+                    title="Blockquote"
+                    class="btn btn-secondary"
+                    onclick=" execCmdWithArg('formatBlock', '<div><blockquote style=\'margin-left: 0; border-left: 2px solid #ccc; padding-left: 10px;\'></div>')"
+                  >
+                    Blockquote
+                  </button>
                 </div>
-                <div class="col-md-6">
-                  <ul class="list-unstyled">
-                    <li><kbd>Ctrl</kbd> + <kbd>1</kbd> : H1</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>2</kbd> : H2</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>3</kbd> : H3</li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> : Font
-                      Size
-                    </li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> : Text
-                      Color
-                    </li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> :
-                      Background Color
-                    </li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> : Insert
-                      Image
-                    </li>
-                    <li><kbd>Ctrl</kbd> + <kbd>K</kbd> : Insert Link</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>/</kbd> : Remove Format</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>Z</kbd> : Undo</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>Y</kbd> : Redo</li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd> :
-                      Uppercase
-                    </li>
-                    <li>
-                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> :
-                      Lowercase
-                    </li>
-                  </ul>
+                <div class="btn-group mr-2 mb-2" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Left Align (Ctrl+L)"
+                    onclick="execCmd('justifyLeft')"
+                  >
+                    Left Align
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Center Align (Ctrl+E)"
+                    onclick="execCmd('justifyCenter')"
+                  >
+                    Center Align
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Right Align (Ctrl+R)"
+                    onclick="execCmd('justifyRight')"
+                  >
+                    Right Align
+                  </button>
+                </div>
+                <div class="btn-group mr-2 mb-2" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Ordered List (Ctrl+Shift+7)"
+                    onclick="execCmd('insertOrderedList')"
+                  >
+                    Ordered List
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="Unordered List (Ctrl+Shift+8)"
+                    onclick="execCmd('insertUnorderedList')"
+                  >
+                    Unordered List
+                  </button>
+                </div>
+                <div class="btn-group mr-2 mb-2" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="H1 (Ctrl+1)"
+                    onclick="execCmdWithArg('formatBlock', 'H1')"
+                  >
+                    H1
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="H2 (Ctrl+2)"
+                    onclick="execCmdWithArg('formatBlock', 'H2')"
+                  >
+                    H2
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="H3 (Ctrl+3)"
+                    onclick="execCmdWithArg('formatBlock', 'H3')"
+                  >
+                    H3
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="settings"
-            role="tabpanel"
-            aria-labelledby="settings-tab"
-          >
-            <div class="mt-3 p-3 border rounded bg-light">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="autoSaveToggle"
-                  checked
-                />
-                <label class="form-check-label" for="autoSaveToggle">
-                  Enable Auto Save
-                </label>
+            <div
+              class="tab-pane fade"
+              id="insert"
+              role="tabpanel"
+              aria-labelledby="insert-tab"
+            >
+              <div class="btn-toolbar mt-3" role="toolbar">
+                <div class="btn-group mr-2" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="document.getElementById('imageInput').click()"
+                    title="Insert Image"
+                  >
+                    Insert Image
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="insertLink()"
+                    title="Insert Link"
+                  >
+                    Insert Link
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="style"
+              role="tabpanel"
+              aria-labelledby="style-tab"
+            >
+              <div class="btn-toolbar mt-3" role="toolbar">
+                <div class="btn-group mr-2" role="group">
+                  <select
+                    class="custom-select"
+                    title="Font Size"
+                    onchange="execCmdWithArg('fontSize', this.value)"
+                  >
+                    <option value="1">Small</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Medium</option>
+                    <option value="4">Large</option>
+                    <option value="5">Extra Large</option>
+                    <option value="6">Huge</option>
+                    <option value="7">Giant</option>
+                  </select>
+                </div>
+                <div class="btn-group mr-2" role="group">
+                  <label for="textColor" class="mr-2">Font</label>
+                  <input
+                    type="color"
+                    id="textColor"
+                    class="form-control-color"
+                    title="Text Color"
+                    onchange="execCmdWithArg('foreColor', this.value)"
+                  />
+                  <label for="highlightColor" class="ml-3 mr-2"
+                    >Highlight</label
+                  >
+                  <input
+                    type="color"
+                    id="highlightColor"
+                    class="form-control-color"
+                    title="Background Color"
+                    onchange="execCmdWithArg('hiliteColor', this.value)"
+                  />
+                </div>
+                <div class="btn-group mr-2" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="execCmd('removeFormat')"
+                    title="Remove Format"
+                  >
+                    Remove Format
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="execCmd('undo')"
+                    title="Undo"
+                  >
+                    Undo
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="execCmd('redo')"
+                    title="Redo"
+                  >
+                    Redo
+                  </button>
+                </div>
+                <div class="btn-group mr-2" role="group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="toggleCase('upper')"
+                    title="Uppercase"
+                  >
+                    Uppercase
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="toggleCase('lower')"
+                    title="Lowercase"
+                  >
+                    Lowercase
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="shortcuts"
+              role="tabpanel"
+              aria-labelledby="shortcuts-tab"
+            >
+              <div class="mt-3 p-3 border rounded bg-light">
+                <h3>Keyboard Shortcuts</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="list-unstyled">
+                      <li><kbd>Ctrl</kbd> + <kbd>B</kbd> : Bold</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>I</kbd> : Italic</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>U</kbd> : Underline</li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> :
+                        StrikeThrough
+                      </li>
+                      <li><kbd>Ctrl</kbd> + <kbd>L</kbd> : Left Align</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>E</kbd> : Center Align</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>R</kbd> : Right Align</li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>7</kbd> :
+                        Ordered List
+                      </li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>8</kbd> :
+                        Unordered List
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="list-unstyled">
+                      <li><kbd>Ctrl</kbd> + <kbd>1</kbd> : H1</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>2</kbd> : H2</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>3</kbd> : H3</li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> : Font
+                        Size
+                      </li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> : Text
+                        Color
+                      </li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> :
+                        Background Color
+                      </li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> :
+                        Insert Image
+                      </li>
+                      <li><kbd>Ctrl</kbd> + <kbd>K</kbd> : Insert Link</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>/</kbd> : Remove Format</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>Z</kbd> : Undo</li>
+                      <li><kbd>Ctrl</kbd> + <kbd>Y</kbd> : Redo</li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd> :
+                        Uppercase
+                      </li>
+                      <li>
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> :
+                        Lowercase
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="settings"
+              role="tabpanel"
+              aria-labelledby="settings-tab"
+            >
+              <div class="mt-3 p-3 border rounded bg-light">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="autoSaveToggle"
+                    checked
+                  />
+                  <label class="form-check-label" for="autoSaveToggle">
+                    Enable Auto Save
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </div>
-    </div>
         <div id="blogbanner-section">
           <div id="banner-image">
             <img src="./assets/img/imgicon.png" height="100" width="100" />
@@ -484,14 +572,32 @@
             <img id="blogbanner-preview" alt="Banner Preview" hidden />
             <div class="banneroptions">
               <button onclick="editBanner()" class="btn btn-outline-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001"/>
-                  </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-pen-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001"
+                  />
+                </svg>
               </button>
               <button onclick="removeBanner()" class="btn btn-outline-danger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-octagon-fill" viewBox="0 0 16 16">
-                    <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
-                  </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-octagon-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"
+                  />
+                </svg>
               </button>
             </div>
           </div>
@@ -529,41 +635,240 @@
         />
         <h1 id="preview-title"></h1>
         <div id="preview-content" class="mt-3 border p-3"></div>
-        <button class="btn btn-success" id="postblog" >Review and Post</button>
+        <button class="btn btn-success" id="postblog">Review and Post</button>
       </div>
-
 
       <div class="user-details-dialog" id="userDetailsDialog">
         <form id="userDetailsForm">
-            <span class="close" id="closeDialog">X</span>
-            <h2>Enter your Details</h2>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="authorName">Author Name:</label>
-                <input type="text" id="authorName" name="authorName" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="linkedin">LinkedIn Link:</label>
-                <input type="url" id="linkedin" name="linkedin" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+          <span class="close" id="closeDialog">X</span>
+          <h2>Enter your Details</h2>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="authorName">Author Name:</label>
+            <input
+              type="text"
+              id="authorName"
+              name="authorName"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="linkedin">LinkedIn Link:</label>
+            <input
+              type="url"
+              id="linkedin"
+              name="linkedin"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              class="form-control"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
         </form>
-    </div>
-    
-    
+      </div>
+
+      <footer class="footer mt-5">
+        <!-- Widgets - Bootstrap Brain Component -->
+        <section class="bg-light py-4 py-md-5 py-xl-8 border-top border-light">
+          <div class="container overflow-hidden">
+            <div class="row gy-4 gy-lg-0 justify-content-xl-between">
+              <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+                <div class="widget">
+                  <a href="#!">
+                    <img
+                      src="./assets/img/ATMAN-removebg-preview.png"
+                      alt=""
+                      class="bsb-tpl-logo-footer"
+                      style="height: 350px"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+                <div class="widget">
+                  <h4 class="widget-title mb-4">Get in Touch</h4>
+                  <!-- <address class="mb-4">8014 Edith Blvd NE, Albuquerque, New York, United States</address> -->
+                  <p class="mb-1">
+                    <a
+                      class="link-secondary text-decoration-none"
+                      href="tel:+919121422554"
+                      >9121422554</a
+                    >
+                  </p>
+                  <p class="mb-0">
+                    <a
+                      class="link-secondary text-decoration-none"
+                      href="mailto:Contact@psyshell.help"
+                      >contact@psyshell.help</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 col-xl-4">
+                <div class="widget">
+                  <h4 class="widget-title mb-4">Our Newsletter</h4>
+                  <p class="mb-4">
+                    Subscribe to our newsletter to get our news & discounts
+                    delivered to you.
+                  </p>
+                  <form action="#!">
+                    <div class="row gy-4">
+                      <div class="col-12">
+                        <div class="input-group">
+                          <span
+                            class="input-group-text"
+                            id="email-newsletter-addon"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              fill="currentColor"
+                              class="bi bi-envelope"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                              />
+                            </svg>
+                          </span>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="email-newsletter"
+                            value=""
+                            placeholder="Email Address"
+                            aria-label="email-newsletter"
+                            aria-describedby="email-newsletter-addon"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button class="btn btn-primary" type="submit">
+                            Subscribe
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Copyright - Bootstrap Brain Component -->
+        <div
+          class="bg-light py-4 py-md-5 py-xl-8 border-top border-light-subtle"
+        >
+          <div class="container overflow-hidden">
+            <div class="row gy-4 gy-md-0">
+              <div class="col-xs-12 col-md-7 order-1 order-md-0">
+                <div class="copyright text-center text-md-start">
+                  &copy; 2024. All Rights Reserved.
+                </div>
+                <div
+                  class="credits text-secondary text-center text-md-start mt-2 fs-7"
+                >
+                  <a
+                    href="https://psyshell.co/"
+                    class="link-secondary text-decoration-none"
+                    >Psyshell.co</a
+                  >
+                  with <span class="text-primary">&#9829;</span>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-5 order-0 order-md-1">
+                <ul class="nav justify-content-center justify-content-md-end">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link link-dark"
+                      href="https://www.facebook.com/Psyshell.contact?mibextid=ZbWKwL"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        class="bi bi-facebook"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-dark" href="#!">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        class="bi bi-twitter"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link link-dark"
+                      href="https://www.instagram.com/Psyshell_innerself?igsh=MTkzaHFhZjQwZjRieA=="
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        class="bi bi-instagram"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./js/blogeditor.js"></script>
+    <script src="./js/newsletter.js"></script>
     <script src="./assets/controller/project-2.js"></script>
     <script src="./assets/controller/wave-bsb.js"></script>
   </body>
