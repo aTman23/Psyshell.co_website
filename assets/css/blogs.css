@@ -1,0 +1,35 @@
+.card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+.card-body {
+    text-align: center;
+}
+#show-more {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+}
+#blog-cards-container:hover{
+    cursor: pointer;
+}
+body{
+
+    background-color: #e1ebfa;
+}
+.breadcrumb {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 10px 15px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: '>';
+}
+
+.card:hover .share-btn {
+    display: block !important;
+  }
+  

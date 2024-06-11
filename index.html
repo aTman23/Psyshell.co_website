@@ -62,7 +62,7 @@
 <body data-bs-spy="scroll" data-bs-target="#bsb-tpl-navbar" data-bs-smooth-scroll="true" tabindex="0">
   <!-- Header -->
   <header id="header" class="sticky-top bsb-tpl-header-sticky bsb-tpl-header-sticky-animationX">
-    <!-- Navbar 1 - Bootstrap Brain Component -->
+   
     <nav id="scrollspyNav"
       class="navbar navbar-expand-lg bsb-tpl-bg-blue bsb-navbar bsb-navbar-hover bsb-navbar-caret bsb-tpl-navbar-sticky"
       data-bsb-sticky-target="#header">
@@ -109,6 +109,15 @@
                 <a class="nav-link active" href="#scrollspyContact" data-bs-dismiss="offcanvas"
                   data-bs-target="#offcanvasNavbar" aria-current="page"style="color:black;">Contact</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="blogs.html" 
+                   aria-current="page"style="color:black;">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="blogeditor.html" 
+                   aria-current="page" style="color:black;">Write Blogs</a>
+              </li>
+
             </ul>
           </div>
         </div>
@@ -197,7 +206,6 @@
       </div>
     </section>
 
-    <!-- Call To Action 1 - Bootstrap Brain Component -->
     <section class="bsb-cta-1 px-2 bsb-overlay" style="background-image: url('./assets/img/cta/cta-img-1.jpg');">
       <div class="container">
         <div class="row">
@@ -216,7 +224,7 @@
     </section>
 
     <!-- Section - Portfolio -->
-    <!-- Project 2 - Bootstrap Brain Component -->
+   
     <section id="scrollspyPortfolio" class="py-5 py-xl-8 bsb-section-py-xxl-1">
       <div class="container mb-5 mb-md-6 mb-xl-10">
         <div class="row justify-content-md-center">
@@ -340,7 +348,7 @@
 
     <!-- Section - About -->
     <section id="scrollspyAbout" class="bsb-tpl-bg-alice-blue py-5 py-xl-8 bsb-section-py-xxl-1">
-      <!-- FAQ 1 - Bootstrap Brain Component -->
+     
       <div class="container">
         <div class="row gy-5 gy-lg-0 align-items-lg-center">
           <div class="col-12 col-lg-6">
@@ -480,7 +488,7 @@
 
 
         <!-- Section - Contact -->
-        <!-- Contact 2 - Bootstrap Brain Component -->
+      
         <section id="scrollspyContact" class="py-5 py-xl-8 bsb-section-py-xxl-1">
           <div class="container">
             <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
@@ -537,10 +545,10 @@
 
   </main>
 
-  <!-- Footer 2 - Bootstrap Brain Component -->
+ 
   <footer class="footer">
 
-    <!-- Widgets - Bootstrap Brain Component -->
+  
     <section class="bg-light py-4 py-md-5 py-xl-8 border-top border-light">
       <div class="container overflow-hidden">
         <div class="row gy-4 gy-lg-0 justify-content-xl-between">
@@ -703,74 +711,7 @@
   <script src="./assets/controller/wave-bsb.js"></script>
 
   <!-- BSB Body End -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
-        });
-      });
-    });
-  });
-    document.addEventListener('DOMContentLoaded', function() {
-      var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-      myModal.show();
-    });
-    function submitForm(event) {
-    event.preventDefault();
-
-    let nameElement = document.getElementById("name");
-    let professionElement = document.getElementById("profession");
-    let emailElement = document.getElementById("email");
-    let mobileNumberElement = document.getElementById("mobile_number");
-    let hobbyElement = document.getElementById("hobby");
-
-    let errorMessage = "Please fill in the following fields:\n";
-    let fieldsWithError = [];
-
-    if (nameElement && nameElement.value.trim() === "") {
-        fieldsWithError.push("Name");
-    }
-    if (professionElement && professionElement.value.trim() === "") {
-        fieldsWithError.push("Profession");
-    }
-    if (emailElement && emailElement.value.trim() === "") {
-        fieldsWithError.push("Email");
-    }
-    if (mobileNumberElement && mobileNumberElement.value.trim() === "") {
-        fieldsWithError.push("Mobile Number");
-    }
-    if (hobbyElement && hobbyElement.value.trim() === "") {
-        fieldsWithError.push("How you heard about us");
-    }
-
-    if (fieldsWithError.length > 0) {
-        errorMessage += fieldsWithError.join(", ");
-        alert(errorMessage);
-    } else {
-        let form = document.getElementById("myForm");
-        let data = new FormData(form);
-        console.log("Form submitted:");
-        fetch("https://script.google.com/macros/s/AKfycbzmz7RJSUwIUbFLtlsh6bbxoQW5Rz22auch0xdBHeX_HnkNXhuJQpHLACM0jJVuHJOG/exec", {
-            method: "POST",
-            body: data
-        })
-        .then(res => res.text())
-        .then(data => {
-            console.log(data);
-            alert("Thank you for your response");
-            form.reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }
-}
-
-  </script>
+ <script src="./js/newsletter.js"></script>
   
 </body>
 
