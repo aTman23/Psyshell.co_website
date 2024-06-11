@@ -386,3 +386,61 @@ function removeBanner() {
 function editBanner() {
   document.getElementById("blogbanner").click();
 }
+
+
+function resetEditor() {
+
+  var result = confirm("Are you sure you want to reset the editor");
+if(!result){
+  return;
+}
+
+
+
+  let editor = document.getElementById('editor');
+  editor.innerHTML = '';
+
+  // Reset toolbar settings
+  // Example: reset font size, text color, and background color inputs
+  document.querySelector('select[title="Font Size"]').selectedIndex = 1; // Reset to default size
+  document.querySelector('input[title="Text Color"]').value = '#000000'; // Reset to black
+  document.querySelector('input[title="Background Color"]').value = '#FFFFFF'; // Reset to white
+
+  // If you have other toolbar settings, reset them accordingly
+  // For example, deselect any active formatting buttons
+  let toolbarButtons = document.querySelectorAll('.btn-toolbar .btn');
+  toolbarButtons.forEach(button => button.classList.remove('active'));
+
+  // Clear any stored settings in local storage
+  localStorage.removeItem('content');
+  localStorage.removeItem('autoSave'); // Assuming you store settings under this key
+
+  // Reset any other custom settings or state
+  // For example, reset the preview area if you have one
+  let previewArea = document.getElementById('preview');
+  if (previewArea) {
+      previewArea.innerHTML = '';
+  }
+
+  // Reset image banner preview if you have one
+  let bannerPreview = document.getElementById('blogbanner-preview');
+  if (bannerPreview) {
+      bannerPreview.src = '';
+      bannerPreview.hidden = true;
+  }
+
+  // Optionally, reset the form fields
+  let blogTitle = document.getElementById('blogTitle');
+  if (blogTitle) {
+      blogTitle.value = '';
+  }
+
+  let blogBanner = document.getElementById('blogbanner');
+  if (blogBanner) {
+      blogBanner.value = '';
+  }
+
+  // Remove any applied formatting from the editor content
+  document.execCommand('removeFormat', false, null);
+}
+
