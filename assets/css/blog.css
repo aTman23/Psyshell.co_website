@@ -11,6 +11,9 @@
     margin-bottom: 100px;
 
 }
+.blog-container img{
+    width: 100%;
+}
 .profile-card {
     text-align: center;
    

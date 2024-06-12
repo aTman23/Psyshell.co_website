@@ -128,6 +128,9 @@ body{
 
     display: none;
 }
+.preview-container img{
+    width: 100%;
+}
 
 .banneroptions {
     display: none;
