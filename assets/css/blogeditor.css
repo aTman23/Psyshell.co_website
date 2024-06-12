@@ -88,6 +88,13 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+@media screen  and (width <= 768px){
+    .fixed-nav{
+        position:static ;
+    }
+    
+}
+
 #blogbanner-section input[type="file"] {
     display: none;
 }
@@ -167,6 +174,29 @@ body{
     padding: 20px;
     border: 1px solid #ccc;
     background-color: #fff;
+}
+button[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    width: max-content;
+    bottom: -150%;
+    left: 0;
+    background-color: #293138;
+    color: #fff; /* Text color */
+    padding: 6px;
+    font-size: small;
+    border: 1px solid #293138; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+    white-space: nowrap; /* Prevent text wrapping */
+    z-index: 1000; /* Ensure tooltip is above other elements */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for appearance */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent hover issue */
+}
+
+button[title]:hover::after {
+    opacity: 1; /* Show tooltip on hover */
 }
 
 .user-details-dialog {
