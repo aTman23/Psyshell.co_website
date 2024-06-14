@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentPage = 1;
   const blogCardsContainer = document.getElementById("blog-cards-container");
   const showMoreButton = document.getElementById("show-more");
-
+showMoreButton.style.display = "none";
   function fetchBlogPosts(page) {
     fetch(`https://atman.onrender.com/blogs?page=${page}`)
       .then((response) => response.json())
@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         if (!data.hasMore) {
           showMoreButton.style.display = "none";
+        }else{
+          showMoreButton.style.display = "block";
         }
         showMoreButton.addEventListener("click", function () {
           currentPage++;

@@ -23,6 +23,27 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("blog-title").innerText = data?.title;
       document.getElementById("blog-title-breadcrumb").innerText = data?.title;
       document.title = `${data?.title} - Blog | PsyShell`;
+      if (data?.title) {
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+          metaDescription = document.createElement('meta');
+          metaDescription.name = "description";
+          document.head.appendChild(metaDescription);
+        }
+        metaDescription.content = data.title;
+      }
+    
+      // Set the Open Graph image
+      if (data.bannerUrl) {
+        let metaOgImage = document.querySelector('meta[property="og:image"]');
+        if (!metaOgImage) {
+          metaOgImage = document.createElement('meta');
+          metaOgImage.setAttribute("property", "og:image");
+          document.head.appendChild(metaOgImage);
+        }
+        metaOgImage.content = data.bannerUrl;
+      }
+  
 
       document.getElementById("blog-timestamp").innerText =
         formatTimeDifferences(data.createdAt);
