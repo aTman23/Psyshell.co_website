@@ -264,6 +264,7 @@ function getUserData() {
       }
 
       postBlog(userDetails);
+      closeDialogButton.click();
     });
 }
 
