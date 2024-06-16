@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       data = data.blog;
 
-      document.getElementById("blog-banner").src = data?.bannerUrl;
+      document.getElementById("blog-banner").src = data?.bannerUrl  || "./assets/img/imgicon.png";;
       document.getElementById("blog-title").innerText = data?.title;
       document.getElementById("blog-title-breadcrumb").innerText = data?.title;
       document.title = `${data?.title} - Blog | PsyShell`;
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
           metaOgImage.setAttribute("property", "og:image");
           document.head.appendChild(metaOgImage);
         }
-        metaOgImage.content = data.bannerUrl;
+        metaOgImage.content = data?.bannerUrl || "./assets/img/imgicon.png";
       }
   
 
