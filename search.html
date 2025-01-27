@@ -49,6 +49,56 @@
 
 
 
+
+
+    <style>
+   
+      .emoji-container {
+        position: relative;
+        width: 150px; /* Adjust size as needed */
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+      
+      /* Style the logo */
+      .logo {
+        width: 100px; /* Adjust the size of the logo */
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      /* Add the loading circle */
+      .loading-circle {
+        position: absolute;
+        width: 150px; /* Same as container size */
+        height: 150px; /* Same as container size */
+        border: 4px solid transparent;
+        border-top: 4px solid #3498db; /* Customize the color */
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+      }
+      
+      /* Add animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }</style>
+      
+      
+
+
+
+
     <script>
       var server_url = "https://portalserver-sepia.vercel.app";
       const getDoctors = async () => {
@@ -91,7 +141,7 @@
                     <div class="doc-info-left">
                       <div class="doctor-img
                       ">
-                        <a href="doctor-profile.html">
+                        <a href="https://psyshell.help/mentalhealth/#${doctor.Username}">
                           <img
                             src="${setProfileImages(doctor.ProfileImage)}"
                             class="img-fluid"
@@ -336,8 +386,10 @@
             
             </div>
             <div class="load-more text-center">
-                <a class="btn btn-primary btn-sm" href="javascript:void(0);"
-                  >Load More</a>
+              <div id="emojiContainer" class="emoji-container">
+                <img src="./assets/img/PSYSHELL.png" alt="Logo" class="logo">
+                <div class="loading-circle"></div>
+              </div>
               </div>
           </div>
         </div>
