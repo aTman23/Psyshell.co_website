@@ -247,9 +247,9 @@ const renderDoctors = (doctors) => {
                     <p class="specialty">${doctor.specialty}</p>
                     <p class="price">💰 $${doctor.price} / Session</p>
                     <div class="button-container">
-                        <button class="view-profile-btn" onclick="viewProfile('${doctor.Username}')">
-                            View Profile
-                        </button>
+                        <a class="view-pro-btn" href="https://psyshell.help/mentalhealth/#${doctor.username}">
+                            <button class="view-profile-btn">View Profile</button>
+                        </a>
                         <button class="book-btn" onclick="bookDoctor('${doctor.id}', '${doctor.name}', '${doctor.location || 'Unknown'}')" ${!doctor.working ? "disabled" : ""}>
                             ${doctor.working ? "Book Now" : "Booked"}
                         </button>
@@ -261,17 +261,17 @@ const renderDoctors = (doctors) => {
     }
 };
 
-function viewProfile(username) {
-    if (!username || username === "undefined") {
-        console.error("Error: Doctor username is missing!");
-        alert("This doctor does not have a valid profile.");
-        return;
-    }
+// function viewProfile(username) {
+//     if (!username || username === "undefined") {
+//         console.error("Error: Doctor username is missing!");
+//         alert("This doctor does not have a valid profile.");
+//         return;
+//     }
 
-    const url = `https://psyshell.help/mentalhealth/#${doctor.Username}`;
+//     const url = `https://psyshell.help/mentalhealth/#${doctor.Username}`;
    
-    window.location.href = url;
-}
+//     window.location.href = url;
+// }
 
 function bookDoctor(doctorId, docName, location) {
     if (!doctorId) {
