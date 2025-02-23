@@ -188,12 +188,13 @@ const getDoctors = async () => {
         });
 
         const data = await response.json();
-        console.log(data);
+       // Debugging log
 
         doctorsData = data.map((doctor, index) => ({
             id: doctor.UserID || index + 1,
             name: doctor.Name || "Unknown Doctor",
-            specializations: doctor.specializations || [],  // Keep as an array
+            username: doctor.Username || doctor.username || `doctor_${index + 1}`, // Ensure username fallback
+            specializations: doctor.specializations || [], 
             specialty: doctor.specializations ? doctor.specializations.join(", ") : "General",
             rating: doctor.rating || (Math.random() * (5 - 4) + 4).toFixed(1),
             price: doctor.CustomPricePerHour || 50,
@@ -202,7 +203,7 @@ const getDoctors = async () => {
             image: doctor.ProfileImage ? setProfileImages(doctor.ProfileImage) : "https://psyshell.help/assets/img/doctors/doctor-thumb-01.jpg",
         }));
 
-        console.log(doctorsData); // Log entire doctorsData instead of specializations
+        console.log("Processed Doctors Data:", doctorsData); // Debugging log
 
         renderDoctors(doctorsData);
     } catch (error) {
@@ -235,6 +236,8 @@ const renderDoctors = (doctors) => {
     } else {
         noResults.style.display = "none";
         doctors.forEach(doctor => {
+            console.log(`Rendering Doctor: ${doctor.name}, Username: ${doctor.username}`); // Debugging log
+
             const card = document.createElement("div");
             card.classList.add("profile-card");
             card.innerHTML = `
@@ -244,13 +247,12 @@ const renderDoctors = (doctors) => {
                     <p class="specialty">${doctor.specialty}</p>
                     <p class="price">💰 $${doctor.price} / Session</p>
                     <div class="button-container">
-                       <button class="view-profile-btn"> <a class="view-pro-btn" href=href="https://psyshell.help/mentalhealth/#${doctor.Username}"
-                          >View Profile</a
-                        ></button>
-
-                       <button class="book-btn" onclick="bookDoctor('${doctor.id}', '${doctor.name}', '${doctor.location || 'Unknown'}')" ${!doctor.working ? "disabled" : ""}>
-                           ${doctor.working ? "Book Now" : "Booked"}
-                       </button>
+                        <button class="view-profile-btn" onclick="viewProfile('${doctor.username}')">
+                            View Profile
+                        </button>
+                        <button class="book-btn" onclick="bookDoctor('${doctor.id}', '${doctor.name}', '${doctor.location || 'Unknown'}')" ${!doctor.working ? "disabled" : ""}>
+                            ${doctor.working ? "Book Now" : "Booked"}
+                        </button>
                     </div>
                 </div>
             `;
@@ -259,51 +261,17 @@ const renderDoctors = (doctors) => {
     }
 };
 
-const handleSearch = () => {
-    const searchTerm = document.getElementById("searchInput").value.trim().toLowerCase();
-
-    if (!searchTerm) {
-        renderDoctors(doctorsData); // Show all doctors when input is empty
+function viewProfile(username) {
+    if (!username || username === "undefined") {
+        console.error("Error: Doctor username is missing!");
+        alert("This doctor does not have a valid profile.");
         return;
     }
 
-    const filteredDoctors = doctorsData.filter(doctor =>
-        doctor.specializations.some(spec => 
-            spec.toLowerCase().includes(searchTerm)
-        )
-    );
-
-    renderDoctors(filteredDoctors);
-};
-
-const handleSort = () => {
-    const sortOption = document.getElementById("sortSelect").value;
-
-    if (!doctorsData.length) return; // Prevent sorting on an empty array
-
-    let sortedDoctors = [...doctorsData]; // Copy array to avoid modifying the original
-
-    switch (sortOption) {
-        case "price":
-            sortedDoctors.sort((a, b) => (a.price || 0) - (b.price || 0));
-            break;
-        case "rating":
-            sortedDoctors.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-            break;
-    }
-
-    renderDoctors(sortedDoctors);
-};
-
-// function viewProfile(username) {
-//     if (!username) {
-//         console.error("Error: Doctor username is missing!");
-//         return;
-//     }
-
-//     const url = `https://psyshell.help/mentalhealth/#${username}`;
-//     window.location.href = url;
-// }
+    const url = `https://www.psyshell.help/mentalhealth/#${encodeURIComponent(username)}`;
+    console.log("Redirecting to:", url); // Debugging log
+    window.location.href = url;
+}
 
 function bookDoctor(doctorId, docName, location) {
     if (!doctorId) {
