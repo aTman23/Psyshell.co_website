@@ -244,7 +244,7 @@ const renderDoctors = (doctors) => {
                     <p class="specialty">${doctor.specialty}</p>
                     <p class="price">💰 $${doctor.price} / Session</p>
                     <div class="button-container">
-                       <button class="view-profile-btn"> <a class="view-pro-btn" href="https://psyshell.help/mentalhealth/#${doctor.name}"
+                       <button class="view-profile-btn"> <a class="view-pro-btn" href=href="https://psyshell.help/mentalhealth/#${doctor.Username}"
                           >View Profile</a
                         ></button>
 
