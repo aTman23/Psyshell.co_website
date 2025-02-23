@@ -236,7 +236,7 @@ const renderDoctors = (doctors) => {
     } else {
         noResults.style.display = "none";
         doctors.forEach(doctor => {
-            console.log(`Rendering Doctor: ${doctor.name}, Username: ${doctor.username}`); // Debugging log
+            console.log(`Rendering Doctor: ${doctor.name}, Username: ${doctor.Username}`); // Debugging log
 
             const card = document.createElement("div");
             card.classList.add("profile-card");
@@ -247,9 +247,9 @@ const renderDoctors = (doctors) => {
                     <p class="specialty">${doctor.specialty}</p>
                     <p class="price">💰 $${doctor.price} / Session</p>
                     <div class="button-container">
-                        <button class="view-profile-btn" onclick="viewProfile('${doctor.username}')">
-    View Profile
-</button>
+                        <button class="view-profile-btn" onclick="viewProfile('${doctor.Username}')">
+                            View Profile
+                        </button>
                         <button class="book-btn" onclick="bookDoctor('${doctor.id}', '${doctor.name}', '${doctor.location || 'Unknown'}')" ${!doctor.working ? "disabled" : ""}>
                             ${doctor.working ? "Book Now" : "Booked"}
                         </button>
@@ -268,7 +268,8 @@ function viewProfile(username) {
         return;
     }
 
-    const url = `https://psyshell.help/mentalhealth/#${username}`;
+    const url = `https://psyshell.help/mentalhealth/#${doctor.Username}`;
+   
     window.location.href = url;
 }
 
