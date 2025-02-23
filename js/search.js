@@ -261,17 +261,17 @@ const renderDoctors = (doctors) => {
     }
 };
 
-// function viewProfile(username) {
-//     if (!username || username === "undefined") {
-//         console.error("Error: Doctor username is missing!");
-//         alert("This doctor does not have a valid profile.");
-//         return;
-//     }
+function viewProfile(username) {
+    if (!username || username === "undefined") {
+        console.error("Error: Doctor username is missing!");
+        alert("This doctor does not have a valid profile.");
+        return;
+    }
 
-//     const url = `https://psyshell.help/mentalhealth/#${doctor.Username}`;
+    const url = `https://psyshell.help/mentalhealth/#${doctor.Username}`;
    
-//     window.location.href = url;
-// }
+    window.location.href = url;
+}
 
 function bookDoctor(doctorId, docName, location) {
     if (!doctorId) {
