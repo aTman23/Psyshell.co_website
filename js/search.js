@@ -269,7 +269,7 @@ function viewProfile(username) {
     }
 
     const url = `https://www.psyshell.help/mentalhealth/#${encodeURIComponent(username)}`;
-    console.log("Redirecting to:", url); // Debugging log
+   
     window.location.href = url;
 }
 
