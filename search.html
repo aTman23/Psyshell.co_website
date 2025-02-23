@@ -8,7 +8,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
-
+    <link rel="stylesheet" href="styles.css">
     <!-- Favicons -->
     <link href="https://psyshell.help/assets/img/favicon.png" rel="icon" />
 
@@ -46,63 +46,14 @@
     <link rel="stylesheet" href="./assets/css/wave-bsb.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="https://psyshell.help/assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/search.css" class="stylesheet">
 
 
-
-
-
-    <style>
-   
-      .emoji-container {
-        position: relative;
-        width: 150px; /* Adjust size as needed */
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-      }
-      
-      /* Style the logo */
-      .logo {
-        width: 100px; /* Adjust the size of the logo */
-        height: 100px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      
-      /* Add the loading circle */
-      .loading-circle {
-        position: absolute;
-        width: 150px; /* Same as container size */
-        height: 150px; /* Same as container size */
-        border: 4px solid transparent;
-        border-top: 4px solid #3498db; /* Customize the color */
-        border-radius: 50%;
-        animation: spin 1.5s linear infinite;
-      }
-      
-      /* Add animation */
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }</style>
-      
-      
-
-
-
-
+<!-- 
     <script>
       var server_url = "https://portalserver-sepia.vercel.app";
       const getDoctors = async () => {
-        const response = await fetch(`${server_url}/auth/doctors/all`, {
+        const response = await fetch(${server_url}/auth/doctors/all, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -141,7 +92,7 @@
                     <div class="doc-info-left">
                       <div class="doctor-img
                       ">
-                        <a href="https://psyshell.help/mentalhealth/#${doctor.Username}">
+                        <a href="doctor-profile.html">
                           <img
                             src="${setProfileImages(doctor.ProfileImage)}"
                             class="img-fluid"
@@ -186,7 +137,7 @@
                         <div class="clinic-services">
                           ${
                             doctor.specializations.map((service) => {
-                              return `<span>${service}</span>`;
+                              return <span>${service}</span>;
                             }).join(" ")
                           }
                        
@@ -215,7 +166,7 @@
           doctorBoard.appendChild(doctorCard);
         });
       }
-    </script>
+    </script> -->
 
 <style>
   a {
@@ -290,112 +241,143 @@
           </div>
         </nav>
       </header>
-   
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar d-none">
-              <!-- Search Filter -->
-              <div class="card search-filter">
-                <div class="card-header">
-                  <h4 class="card-title mb-0">Search Filter</h4>
-                </div>
-                <div class="card-body">
-                  <div class="filter-widget">
-                    <div class="cal-icon">
-                      <input
-                        type="text"
-                        class="form-control datetimepicker"
-                        placeholder="Select Date"
-                      />
-                    </div>
-                  </div>
-                  <div class="filter-widget">
-                    <h4>Gender</h4>
-                    <div>
-                      <label class="custom_check">
-                        <input type="checkbox" name="gender_type" checked />
-                        <span class="checkmark"></span> Male Doctor
-                      </label>
-                    </div>
-                    <div>
-                      <label class="custom_check">
-                        <input type="checkbox" name="gender_type" />
-                        <span class="checkmark"></span> Female Doctor
-                      </label>
-                    </div>
-                  </div>
-                  <div class="filter-widget">
-                    <h4>Select Specialist</h4>
-                    <div>
-                      <label class="custom_check">
-                        <input
-                          type="checkbox"
-                          name="select_specialist"
-                          checked
-                        />
-                        <span class="checkmark"></span> Urology
-                      </label>
-                    </div>
-                    <div>
-                      <label class="custom_check">
-                        <input
-                          type="checkbox"
-                          name="select_specialist"
-                          checked
-                        />
-                        <span class="checkmark"></span> Neurology
-                      </label>
-                    </div>
-                    <div>
-                      <label class="custom_check">
-                        <input type="checkbox" name="select_specialist" />
-                        <span class="checkmark"></span> Dentist
-                      </label>
-                    </div>
-                    <div>
-                      <label class="custom_check">
-                        <input type="checkbox" name="select_specialist" />
-                        <span class="checkmark"></span> Orthopedic
-                      </label>
-                    </div>
-                    <div>
-                      <label class="custom_check">
-                        <input type="checkbox" name="select_specialist" />
-                        <span class="checkmark"></span> Cardiologist
-                      </label>
-                    </div>
-                    <div>
-                      <label class="custom_check">
-                        <input type="checkbox" name="select_specialist" />
-                        <span class="checkmark"></span> Cardiologist
-                      </label>
-                    </div>
-                  </div>
-                  <div class="btn-search">
-                    <button type="button" class="btn btn-block">Search</button>
-                  </div>
-                </div>
-              </div>
-              <!-- /Search Filter -->
+      <div class="wrapper">
+        <!-- Search Bar & Sorting -->
+        <div class="top-bar">
+            <div class="search-bar">
+                <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search by specialty...">
+                <button class="search-button">🔍</button>
+                
             </div>
-
-            <div class="col-md-12 " id="doctors">
-          
-
+            <select id="sortSelect" onchange="handleSort()">
+                <option value="default" disabled selected>Sort By</option>
+                <option value="price">Cost (Low to High)</option>
+                <option value="rating">Rating (High to Low)</option>
+            </select>
             
-            </div>
-            <div class="load-more text-center">
-              <div id="emojiContainer" class="emoji-container">
-                <img src="./assets/img/PSYSHELL.png" alt="Logo" class="logo">
-                <div class="loading-circle"></div>
-              </div>
-              </div>
-          </div>
         </div>
-      </div>
-      <!-- /Page Content -->
 
+        <!-- Doctor Profiles -->
+        <div id="profilesContainer" class="profiles-container">
+            <!-- Dynamic Content Will Be Inserted Here -->
+        </div>
+         <!-- Loading Animation -->
+<div id="loading" class="load-row">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+        <div id="noResults" class="no-results">
+            <img src="https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg" alt="No results">
+            <p>Oops! No specialist found 😞</p>
+        </div>
+    </div>
+
+    <!-- <script>
+        var server_url = "https://portalserver-sepia.vercel.app";
+        let doctorsData = []; // To store fetched doctors
+
+        const getDoctors = async () => {
+            const response = await fetch(${server_url}/auth/doctors/all, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            const data = await response.json();
+
+            doctorsData = data.map((doctor, index) => ({
+                id: doctor.UserID || index + 1,
+                name: doctor.Name || "Unknown Doctor",
+                specialty: doctor.specializations ? doctor.specializations.join(", ") : "General",
+                rating: doctor.rating || (Math.random() * (5 - 4) + 4).toFixed(1),
+                price: doctor.CustomPricePerHour || 50,
+                working: doctor.working ?? true,
+                image: doctor.ProfileImage ? setProfileImages(doctor.ProfileImage) : "https://psyshell.help/assets/img/doctors/doctor-thumb-01.jpg",
+            }));
+
+            renderDoctors(doctorsData);
+        };
+
+        window.onload = () => {
+            getDoctors();
+        };
+
+        function setProfileImages(ProfileImage) {
+            if (!ProfileImage?.data) return "https://psyshell.help/assets/img/doctors/doctor-thumb-01.jpg";
+            const bufferArray = new Uint8Array(ProfileImage?.data);
+            const blob = new Blob([bufferArray], { type: "image/jpeg" });
+            return URL.createObjectURL(blob);
+        }
+
+        const renderDoctors = (doctors) => {
+            const profilesContainer = document.getElementById("profilesContainer");
+            const noResults = document.getElementById("noResults");
+
+            profilesContainer.innerHTML = "";
+
+            if (doctors.length === 0) {
+                noResults.style.display = "block";
+            } else {
+                noResults.style.display = "none";
+                doctors.forEach(doctor => {
+                    const card = document.createElement("div");
+                    card.classList.add("profile-card");
+                    card.innerHTML = `
+                        <img src="${doctor.image}" class="profile-image" alt="${doctor.name}">
+                        <div class="profile-details">
+                            <h3 class="doctor-name">${doctor.name}</h3>
+                            <p class="specialty">${doctor.specialty}</p>
+                            <p class="rating">⭐ ${doctor.rating}</p>
+                            <p class="price">💰 $${doctor.price} / Session</p>
+                            <p class="status">${doctor.working ? "🟢 Available" : "🔴 Unavailable"}</p>
+                            <div class="button-container">
+                                <button class="view-profile-btn" onclick="viewProfile(${doctor.id})">Profile</button>
+                                <button class="book-btn" onclick="bookDoctor(${doctor.id})" ${!doctor.working ? "disabled" : ""}>
+                                    ${doctor.working ? "Book Now" : "Booked"}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    profilesContainer.appendChild(card);
+                });
+            }
+        };
+
+        const handleSearch = () => {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const filteredDoctors = doctorsData.filter(doctor =>
+                doctor.specialty.toLowerCase().includes(searchTerm)
+            );
+            renderDoctors(filteredDoctors);
+        };
+
+        const handleSort = () => {
+            const sortOption = document.getElementById("sortSelect").value;
+            let sortedDoctors = [...doctorsData];
+
+            if (sortOption === "price") {
+                sortedDoctors.sort((a, b) => a.price - b.price);
+            } else if (sortOption === "rating") {
+                sortedDoctors.sort((a, b) => b.rating - a.rating);
+            }
+
+            renderDoctors(sortedDoctors);
+        };
+
+        function viewProfile(doctorId) {
+            alert(Viewing profile for doctor with ID: ${doctorId});
+        }
+
+        function bookDoctor(doctorId) {
+            alert(Booking appointment with doctor ID: ${doctorId});
+        }
+    </script> -->
+   
+   
+    <script src="./js/search.js"></script>
       <!-- Footer -->
       <footer class="footer">
         <!-- Footer Top -->
@@ -449,6 +431,14 @@
                       <i class="fas fa-envelope"></i>
                       contact@psyshell.help
                     </p>
+                    <div class="copyright-menu">
+                      <ul class="policy-menu">
+                        <li>
+                          <a href="term-condition.html">Terms and Conditions</a>
+                        </li>
+                        <li><a href="privacy-policy.html">Policy</a></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <!-- /Footer Widget -->
@@ -458,36 +448,7 @@
         </div>
         <!-- /Footer Top -->
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="container-fluid">
-            <!-- Copyright -->
-            <div class="copyright">
-              <div class="row">
-                <div class="col-md-6 col-lg-6">
-                  <div class="copyright-text">
-                    <p class="mb-0">
-                      <a href="#">PsyShell</a>
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-6">
-                  <!-- Copyright Menu -->
-                  <div class="copyright-menu">
-                    <ul class="policy-menu">
-                      <li>
-                        <a href="term-condition.html">Terms and Conditions</a>
-                      </li>
-                      <li><a href="privacy-policy.html">Policy</a></li>
-                    </ul>
-                  </div>
-                  <!-- /Copyright Menu -->
-                </div>
-              </div>
-            </div>
-            <!-- /Copyright -->
-          </div>
-        </div>
+ 
         <!-- /Footer Bottom -->
       </footer>
       <!-- /Footer -->
