@@ -268,7 +268,7 @@ function viewProfile(username) {
         return;
     }
 
-    const url = `https://www.psyshell.help/mentalhealth/#${encodeURIComponent(username)}`;
+    const url = `https://psyshell.help/mentalhealth/#${doctor.Username}`;
    
     window.location.href = url;
 }
