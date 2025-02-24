@@ -260,6 +260,34 @@ const renderDoctors = (doctors) => {
         });
     }
 };
+const handleSearch = () => {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+
+    const filteredDoctors = doctorsData.filter(doctor =>
+        doctor.specialty.toLowerCase().includes(searchTerm) // Use specialty since it's mapped as a string
+    );
+
+    renderDoctors(filteredDoctors);
+};
+
+const handleSort = () => {
+    const sortOption = document.getElementById("sortSelect").value;
+
+    if (!doctorsData.length) return; // Prevent sorting on an empty array
+
+    let sortedDoctors = [...doctorsData]; // Copy array to avoid modifying the original
+
+    switch (sortOption) {
+        case "price":
+            sortedDoctors.sort((a, b) => (a.price || 0) - (b.price || 0));
+            break;
+        case "rating":
+            sortedDoctors.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+            break;
+    }
+
+    renderDoctors(sortedDoctors);
+};
 
 function viewProfile(username) {
     if (!username || username === "undefined") {
