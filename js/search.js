@@ -200,7 +200,7 @@ const getDoctors = async () => {
             price: doctor.CustomPricePerHour || 50,
             working: doctor.working ?? true,
             location: doctor.City || "Not Available", 
-            image: doctor.ProfileImage ? setProfileImages(doctor.ProfileImage) : "https://user.psyshell.co/assets/img/doctors/doctor-thumb-01.jpg",
+            image: doctor.ProfileImage ? setProfileImages(doctor.ProfileImage) : "https://booking.psyshell.co/assets/img/doctors/doctor-thumb-01.jpg",
         }));
 
         console.log("Processed Doctors Data:", doctorsData); // Debugging log
@@ -219,7 +219,7 @@ window.onload = () => {
 };
 
 function setProfileImages(ProfileImage) {
-    if (!ProfileImage?.data) return "https://user.psyshell.co/assets/img/doctors/doctor-thumb-01.jpg";
+    if (!ProfileImage?.data) return "https://booking.psyshell.co/assets/img/doctors/doctor-thumb-01.jpg";
     const bufferArray = new Uint8Array(ProfileImage?.data);
     const blob = new Blob([bufferArray], { type: "image/jpeg" });
     return URL.createObjectURL(blob);
@@ -247,7 +247,7 @@ const renderDoctors = (doctors) => {
                     <p class="specialty">${doctor.specialty}</p>
                     <p class="price">💰 $${doctor.price} / Session</p>
                     <div class="button-container">
-                        <a class="view-pro-btn" href="https://user.psyshell.co/mentalhealth/#${doctor.username}">
+                        <a class="view-pro-btn" href="https://booking.psyshell.co/mentalhealth/#${doctor.username}">
                             <button class="view-profile-btn">View Profile</button>
                         </a>
                         <button class="book-btn" onclick="bookDoctor('${doctor.id}', '${doctor.name}', '${doctor.location || 'Unknown'}')" ${!doctor.working ? "disabled" : ""}>
@@ -296,7 +296,7 @@ function viewProfile(username) {
         return;
     }
 
-    const url = `https://user.psyshell.co/mentalhealth/#${doctor.Username}`;
+    const url = `https://booking.psyshell.co/mentalhealth/#${doctor.Username}`;
    
     window.location.href = url;
 }
@@ -310,6 +310,6 @@ function bookDoctor(doctorId, docName, location) {
 
     docName = docName || "Unknown Doctor";
     location = location || "Not Available";
-    const url = `https://user.psyshell.co/booking.html?doctorId=${doctorId}&docName=${encodeURIComponent(docName)}&Loc=${encodeURIComponent(location)}`;
+    const url = `https://booking.psyshell.co/booking.html?doctorId=${doctorId}&docName=${encodeURIComponent(docName)}&Loc=${encodeURIComponent(location)}`;
     window.location.href = url;
 }
